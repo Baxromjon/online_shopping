@@ -6,8 +6,7 @@ const countrySchema=new mongoose.Schema({
         type:String,
         required:true,
         minlength:3,
-        maxlength:55,
-        unique:true
+        maxlength:55
     }
 });
 

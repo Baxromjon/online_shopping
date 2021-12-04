@@ -10,8 +10,7 @@ const regionSchema = mongoose.Schema({
         maxlength: 55
     },
     country: {
-        type: countrySchema,
-        required: true
+        type: countrySchema
     }
 
 })
@@ -20,10 +19,11 @@ const Region=mongoose.model('Region', regionSchema);
 function validateRegion(region){
     const regionSchema={
         name:Joi.string().min(3).max(55).required(),
-        countryId:Joi.string().required()
+        countryId:Joi.string()
     }
     return Joi.validate(region, regionSchema)
 }
 
 exports.Region=Region;
 exports.validateRegion=validateRegion;
+exports.regionSchema=regionSchema;

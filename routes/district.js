@@ -23,20 +23,12 @@ router.post('/', async (req, res) => {
     let region = await Region.findById(req.body.regionId);
     if (!region)
         return res.status(400).send('Region not found by given regionId')
-    // let country = await Country.findById(req.body.countryId)
-    // if (!country)
-    //     return res.status(400).send('Country not found by given country Id')
-
     let district = new District({
         name: req.body.name,
         region: {
             _id: region._id,
             name: region.name
-        },
-        // country: {
-        //     _id: country._id,
-        //     name: country.name
-        // }
+        }
     })
     district = await district.save();
     res.status(201).send('Successfully added!')

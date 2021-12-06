@@ -11,8 +11,7 @@ const districtSchema = mongoose.Schema({
         max: 55
     },
     region: {
-        type: regionSchema,
-        required: true
+        type: regionSchema
     },
     // country: {
     //     type: countrySchema,

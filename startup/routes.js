@@ -1,12 +1,20 @@
-const express=require('express');
-const country=require('../routes/country');
-const region=require('../routes/region')
-const district=require('../routes/district')
+const express = require('express');
+const country = require('../routes/country');
+const region = require('../routes/region')
+const district = require('../routes/district')
+const address = require('../routes/address')
+const category = require('../routes/category')
+const measurement = require('../routes/measurement')
+const currencyType = require('../routes/currencyType')
 
 
-module.exports=function(app){
+module.exports = function (app) {
     app.use(express.json());
     app.use('/api/countries', country);
     app.use('/api/regions', region);
-    app.use('/api/districts', district)
+    app.use('/api/districts', district);
+    app.use('/api/address', address);
+    app.use('/api/categories', category);
+    app.use('/api/measurements', measurement);
+    app.use('/api/currencyType', currencyType);
 }

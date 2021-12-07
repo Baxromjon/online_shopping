@@ -6,6 +6,9 @@ const address = require('../routes/address')
 const category = require('../routes/category')
 const measurement = require('../routes/measurement')
 const currencyType = require('../routes/currencyType')
+const payType = require('../routes/payType')
+const product=require('../routes/product')
+const detail=require('../routes/detail')
 
 
 module.exports = function (app) {
@@ -16,5 +19,8 @@ module.exports = function (app) {
     app.use('/api/address', address);
     app.use('/api/categories', category);
     app.use('/api/measurements', measurement);
-    app.use('/api/currencyType', currencyType);
+    app.use('/api/currencyTypes', currencyType);
+    app.use('/api/payTypes', payType)
+    app.use('/api/products', product)
+    app.use('/api/details', detail)
 }

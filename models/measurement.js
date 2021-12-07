@@ -3,8 +3,7 @@ const Joi = require('joi')
 
 const measurementSchema=mongoose.Schema({
     name:{
-        type:String,
-        required:true
+        type:String
     }
 })
 
@@ -12,7 +11,7 @@ const Measurement=mongoose.model('Measurement', measurementSchema);
 
 function validateMeasurement(measurement){
     const measurementSchema={
-        name:Joi.string().required()
+        name:Joi.string()
     }
     return Joi.validate(measurement, measurementSchema);
 }

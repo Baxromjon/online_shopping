@@ -3,8 +3,7 @@ const Joi = require('joi')
 
 const currencyTypeSchema = mongoose.Schema({
     name: {
-        type: String,
-        required: true,
+        type: String
     },
     description: {
         type: String

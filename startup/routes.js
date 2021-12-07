@@ -7,8 +7,10 @@ const category = require('../routes/category')
 const measurement = require('../routes/measurement')
 const currencyType = require('../routes/currencyType')
 const payType = require('../routes/payType')
-const product=require('../routes/product')
-const detail=require('../routes/detail')
+const product = require('../routes/product')
+const detail = require('../routes/detail')
+const values = require('../routes/value')
+const user = require('../routes/user')
 
 
 module.exports = function (app) {
@@ -20,7 +22,9 @@ module.exports = function (app) {
     app.use('/api/categories', category);
     app.use('/api/measurements', measurement);
     app.use('/api/currencyTypes', currencyType);
-    app.use('/api/payTypes', payType)
-    app.use('/api/products', product)
-    app.use('/api/details', detail)
+    app.use('/api/payTypes', payType);
+    app.use('/api/products', product);
+    app.use('/api/details', detail);
+    app.use('/api/values', values);
+    app.use('/api/users', user)
 }

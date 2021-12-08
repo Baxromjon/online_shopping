@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/custom-environment-variables.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/default.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/admin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/address.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/currencyType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/detail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/district.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/measurement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/outputTrade.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/payType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/region.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/value.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/address.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/country.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/currencyType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/detail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/district.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/measurement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/payType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/product.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/region.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/value.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startup/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startup/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/startup/routes.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="220k53bArcIi2vZV99iJsaLLuiT" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/web/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="" />
+      <created>1638981710146</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638981710146</updated>
+      <workItem from="1638981712218" duration="251000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

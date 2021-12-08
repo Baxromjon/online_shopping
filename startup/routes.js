@@ -11,6 +11,7 @@ const product = require('../routes/product')
 const detail = require('../routes/detail')
 const values = require('../routes/value')
 const user = require('../routes/user')
+const auth = require('../routes/auth')
 
 
 module.exports = function (app) {
@@ -26,5 +27,6 @@ module.exports = function (app) {
     app.use('/api/products', product);
     app.use('/api/details', detail);
     app.use('/api/values', values);
-    app.use('/api/users', user)
+    app.use('/api/users', user);
+    app.use('/api/auth', auth);
 }

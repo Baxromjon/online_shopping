@@ -1,3 +1,4 @@
 {
+    "jwtPrivateKey":"onlineshopping_jwtPrivateKey",
     "db":"online_shopping_connstring"
 }

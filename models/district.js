@@ -5,7 +5,6 @@ const { regionSchema } = require('./region')
 const districtSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
         min: 3,
         max: 55
     },
@@ -17,7 +16,7 @@ const District = mongoose.model('District', districtSchema);
 
 function validateDistrict(district) {
     const districtSchema = {
-        name: Joi.string().required().min(3).max(55),
+        name: Joi.string().min(3).max(55),
         regionId: Joi.string().required()
     }
     return Joi.validate(district, districtSchema)

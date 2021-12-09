@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const { validateProduct, Product } = require('../models/product')
-const { Measurement } = require('../models/measurement')
-const { Category } = require('../models/category')
+const {validateProduct, Product} = require('../models/product')
+const {Measurement} = require('../models/measurement')
+const {Category} = require('../models/category')
+const cors = require('cors')
 
-router.get('/', async (req, res) => {
+router.get('/allProducts',cors(), async (req, res) => {
     const products = await Product.find().sort('name')
     res.send(products)
 })
@@ -16,7 +17,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    const { error } = validateProduct(req.body)
+    const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
     const category = await Category.findById(req.body.categoryId)
@@ -27,8 +28,8 @@ router.post('/', async (req, res) => {
         return res.status(400).send('Measurement not found by given measurementId')
     let product = new Product({
         name: req.body.name,
-        category: category._id,
-        measurement: measurement._id,
+        category: {_id: category._id, name: category.name},
+        measurement: {_id: measurement._id, name: measurement.name},
         percent: req.body.percent,
         standardPrice: req.body.standardPrice
     })

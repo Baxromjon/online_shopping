@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class Register extends Component {
+class Category extends Component {
     render() {
         return (
             <div>
-                <h1>Register</h1>
+                <h1>Category</h1>
             </div>
         );
     }
 }
 
-Register.propTypes = {};
+Category.propTypes = {};
 
-export default Register;
+export default Category;

@@ -5,7 +5,8 @@ const _ = require('lodash')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
-router.post('/', async (req, res) => {
+router.post('/auth/login', async (req, res) => {
+    console.log('loginga kirdi')
     const { error } = validate(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)

@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Category.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/measurement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/measurement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/constant.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/constant.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +99,16 @@
       <updated>1638981710146</updated>
       <workItem from="1638981712218" duration="251000" />
       <workItem from="1639017782003" duration="6410000" />
-      <workItem from="1639065508384" duration="3072000" />
+      <workItem from="1639065508384" duration="7096000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1639068885670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639068885670</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,5 +116,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

@@ -5,18 +5,18 @@ const {Measurement} = require('../models/measurement')
 const {Category} = require('../models/category')
 const cors = require('cors')
 
-router.get('/allProducts',cors(), async (req, res) => {
+router.get('/allProducts', cors(), async (req, res) => {
     const products = await Product.find().sort('name')
     res.send(products)
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/byId/:id', async (req, res) => {
     const product = await Product.findById(req.params.id)
     if (!product)
         return res.status(400).send('Product not found by given id')
 })
 
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -35,6 +35,35 @@ router.post('/', async (req, res) => {
     })
     product = await product.save()
     res.status(201).send('Successfully added')
+})
+router.put('/edit/:id', async (req, res) => {
+    const {error} = validateProduct(req.body)
+    return res.status(400).send(error.details[0].message)
+
+    const category = await Category.findById(req.body.categoryId)
+    if (!category)
+        return res.status(400).send('Category not found')
+    const measurement = await Measurement.findById(req.body.measurementId)
+    if (!measurement)
+        return res.status(400).send('Measurement not found')
+    const product = await Product.findByIdAndUpdate(req.params.is, {
+        name: req.body.name,
+        standardPrice: req.body.standardPrice,
+        percent: req.body.percent,
+        category: {_id: category._id, name: category.name},
+        measurement: {_id: measurement._id, name: measurement.name}
+    }, {new: true})
+    if (!product)
+        return res.status(400).send('Product not found by given id')
+
+    res.send('Successfully edited')
+})
+router.delete('/delete/:id', async (req, res) => {
+    const product = await Product.findByIdAndRemove(req.params._id)
+    if (!product)
+        return res.status(400).send('Product not found by given id')
+
+    res.send('Successfully deleted')
 })
 
 module.exports = router;

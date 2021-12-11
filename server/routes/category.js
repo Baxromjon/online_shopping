@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { categorySchema, Category, validateCategory } = require('../models/category')
+const {categorySchema, Category, validateCategory} = require('../models/category')
 
-router.get('/', async (req, res) => {
+router.get('/getAll', async (req, res) => {
     const category = await Category.find().populate("parentCategory")
     res.send(category)
 })
 
-router.post('/', async (req, res) => {
-    const { error } = validateCategory(req.body)
+router.post('/add', async (req, res) => {
+    const {error} = validateCategory(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
     const parentCategory = await Category.findById(req.body.parentCategoryId)
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     res.status(201).send('Successfully added')
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/byId/:id', async (req, res) => {
     const category = await Category.findById(req.params.id)
     if (!category)
         return res.status(400).send('category not found by given Id')
@@ -34,8 +34,8 @@ router.get('/:id', async (req, res) => {
     res.send(category)
 })
 
-router.put('/:id', async (req, res) => {
-    const { error } = validateCategory(req.body)
+router.put('/edit/:id', async (req, res) => {
+    const {error} = validateCategory(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
 
@@ -46,14 +46,14 @@ router.put('/:id', async (req, res) => {
         name: req.body.name,
         index: req.body.index,
         parentCategory: parentCategory._id
-    }, { new: true })
+    }, {new: true})
     if (!category)
         return res.status(400).send('Category not found')
 
     res.send('Successfully edited')
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const category = await Category.findByIdAndRemove(req.params.id)
     if (!category)
         return res.status(400).send('Category not found')

@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const {categorySchema, Category, validateCategory} = require('../models/category')
+const cors = require('cors')
 
-router.get('/getAll', async (req, res) => {
+router.get('/getAll', cors(), async (req, res) => {
     const category = await Category.find().populate("parentCategory")
     res.send(category)
 })

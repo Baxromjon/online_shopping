@@ -1,13 +1,15 @@
 const express = require('express')
 const router = express.Router()
 const { validateMeasurement, Measurement } = require('../models/measurement')
+const cors = require('cors')
 
-router.get('/getAll', async (req, res) => {
+
+router.get('/getAllMeasurement', cors(),async (req, res) => {
     const measurement = await Measurement.find().sort('name')
     res.send(measurement);
 })
 
-router.post('/add', async (req, res) => {
+router.post('/addMeasurement', async (req, res) => {
     const { error } = validateMeasurement(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -20,7 +22,7 @@ router.post('/add', async (req, res) => {
     res.send('Successfully added')
 })
 
-router.put('/edit/:id', async (req, res) => {
+router.put('/editMeasurement/:id', async (req, res) => {
     const { error } = validateMeasurement(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -30,7 +32,7 @@ router.put('/edit/:id', async (req, res) => {
     res.send('Successfully edited')
 })
 
-router.get('/byId/:id', async (req, res) => {
+router.get('/byIdMeasurement/:id', async (req, res) => {
     const measurement = await Measurement.findById(req.params.id)
     if (!measurement)
         return res.status(400).send('Measurement not found')
@@ -38,7 +40,7 @@ router.get('/byId/:id', async (req, res) => {
     res.send(measurement)
 })
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/deleteMeasurement/:id', async (req, res) => {
     const measurement = await Measurement.findByIdAndRemove(req.params.id)
     if (!measurement)
         return res.status(400).send('Measurement not found by given Id')

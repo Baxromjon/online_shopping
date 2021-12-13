@@ -22,6 +22,8 @@ class Product extends Component {
 
     componentDidMount() {
         this.getProduct()
+        this.getCategory()
+        this.getMeasurement()
     }
 
     openModal = () => {
@@ -38,17 +40,39 @@ class Product extends Component {
         })
     }
 
+    getCategory = () => {
+        request({
+            url: api.getCategory,
+            method: 'GET'
+        }).then(res => {
+            this.setState({category: res.data})
+            console.log(res.data)
+        }).catch(err => {
+        })
+    }
+
+    getMeasurement = () => {
+        request({
+            url: api.getMeasurement,
+            method: 'GET'
+        }).then(res => {
+            this.setState({measurement: res.data})
+        }).catch(err => {
+        })
+    }
+
     editProduct = (product) => {
-        console.log(product)
         this.openModal();
         this.setState({
-            currentProduct: product
+            currentProduct: product,
+            currentCategory: product.category,
+            currentMeasurement: product.measurement
         })
     }
 
     saveProduct = (e, v) => {
+        console.log(v)
         let current = this.state.currentProduct;
-        console.log(current)
         request({
             url: !current ? api.addProduct : (api.editProduct + '/' + current._id),
             method: !current ? 'POST' : 'PUT',
@@ -64,15 +88,23 @@ class Product extends Component {
         console.log(product)
         this.setState({
             deleteModal: true,
-            currentProduct: product
+            currentProduct: product,
+            currentCategory: product.category,
+            currentMeasurement: product.measurement
         })
     }
 
     render() {
+        console.log(this.state.currentProduct)
+        console.log(this.state.currentCategory)
+        console.log(this.state.measurement)
         return (
             <div>
                 <h1 className="text-center">Product list</h1>
-                <button className="btn btn-success btn-outline-light">addProduct</button>
+                <button className="btn btn-success btn-outline-light"
+                        onClick={this.openModal}
+                >addProduct
+                </button>
                 <hr/>
                 <br/>
                 <table className="table table-bordered text-center">
@@ -117,8 +149,32 @@ class Product extends Component {
                     <ModalBody>
                         <AvForm onValidSubmit={this.saveProduct}>
                             <AvField
+                                placeholder="enter product name"
                                 defaultValue={this.state.currentProduct.name}
-                                name:"name" required/>
+                                name="name" required/>
+                            <AvField
+                                placeholder="enter product standard price"
+                                defaultValue={this.state.currentProduct.standardPrice}
+                                name="standardPrice" required/>
+                            <AvField
+                                type="select"
+                                name="categoryId"
+                                defaultValue={this.state.currentCategory.name}>
+                                <option value="" disabled>select category</option>
+                                {this.state.category?.map(item =>
+                                    <option value={item._id}>{item.name}</option>)}
+                            </AvField>
+                            <AvField
+                                type="select"
+                                name="measurementId"
+                                defaultValue={this.state.currentMeasurement.name}>
+                                <option value="">Select Measurement</option>
+                                {this.state.measurement?.map(item =>
+                                    <option value={item._id}>{item.name}</option>)}
+                            </AvField>
+                            <button className="btn btn-success">Save</button>
+                            <button className="btn btn-danger"
+                            onClick={this.openModal}>Cancel</button>
                         </AvForm>
                     </ModalBody>
                 </Modal>

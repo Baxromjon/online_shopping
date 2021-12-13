@@ -10,13 +10,13 @@ router.get('/allProducts', cors(), async (req, res) => {
     res.send(products)
 })
 
-router.get('/byId/:id', async (req, res) => {
+router.get('/byId/:id', cors(), async (req, res) => {
     const product = await Product.findById(req.params.id)
     if (!product)
         return res.status(400).send('Product not found by given id')
 })
 
-router.post('/add', async (req, res) => {
+router.post('/add', cors(), async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -33,12 +33,13 @@ router.post('/add', async (req, res) => {
         percent: req.body.percent,
         standardPrice: req.body.standardPrice
     })
-    product = await product.save()
+    await product.save()
     res.status(201).send('Successfully added')
 })
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/:id', cors(), async (req, res) => {
     const {error} = validateProduct(req.body)
-    return res.status(400).send(error.details[0].message)
+    if (error)
+        return res.status(400).send(error.details[0].message)
 
     const category = await Category.findById(req.body.categoryId)
     if (!category)
@@ -46,7 +47,7 @@ router.put('/edit/:id', async (req, res) => {
     const measurement = await Measurement.findById(req.body.measurementId)
     if (!measurement)
         return res.status(400).send('Measurement not found')
-    const product = await Product.findByIdAndUpdate(req.params.is, {
+    const product = await Product.findByIdAndUpdate(req.params.id, {
         name: req.body.name,
         standardPrice: req.body.standardPrice,
         percent: req.body.percent,

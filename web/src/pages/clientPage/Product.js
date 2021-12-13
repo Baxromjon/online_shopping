@@ -46,7 +46,6 @@ class Product extends Component {
             method: 'GET'
         }).then(res => {
             this.setState({category: res.data})
-            console.log(res.data)
         }).catch(err => {
         })
     }
@@ -71,7 +70,6 @@ class Product extends Component {
     }
 
     saveProduct = (e, v) => {
-        console.log(v)
         let current = this.state.currentProduct;
         request({
             url: !current ? api.addProduct : (api.editProduct + '/' + current._id),
@@ -84,7 +82,7 @@ class Product extends Component {
         })
     }
 
-    deleteProduct = (product) => {
+    deleteProductModal = (product) => {
         console.log(product)
         this.setState({
             deleteModal: true,
@@ -93,11 +91,27 @@ class Product extends Component {
             currentMeasurement: product.measurement
         })
     }
+    hideDeleteModal = () => {
+        this.setState({
+            deleteModal: !this.state.deleteModal,
+            currentProduct: ''
+        })
+    }
+
+    deleteProduct = () => {
+        let current = this.state.currentProduct
+        request({
+            url: api.deleteProduct + '/' + current._id,
+            method: 'DELETE'
+        }).then(res => {
+            this.hideDeleteModal()
+            this.getProduct()
+        }).catch(err => {
+        })
+    }
+
 
     render() {
-        console.log(this.state.currentProduct)
-        console.log(this.state.currentCategory)
-        console.log(this.state.measurement)
         return (
             <div>
                 <h1 className="text-center">Product list</h1>
@@ -134,7 +148,7 @@ class Product extends Component {
                             </td>
                             <td>
                                 <button className="btn btn-danger"
-                                        onClick={() => this.deleteProduct(item)}>DELETE
+                                        onClick={() => this.deleteProductModal(item)}>DELETE
                                 </button>
                             </td>
                         </tr>
@@ -174,9 +188,21 @@ class Product extends Component {
                             </AvField>
                             <button className="btn btn-success">Save</button>
                             <button className="btn btn-danger"
-                            onClick={this.openModal}>Cancel</button>
+                                    onClick={this.openModal}>Cancel
+                            </button>
                         </AvForm>
                     </ModalBody>
+                </Modal>
+                <Modal isOpen={this.state.deleteModal}>
+                    <ModalHeader>{"Do you want delete this product  " + this.state.currentProduct.name}</ModalHeader>
+                    <ModalFooter>
+                        <button className="btn btn-danger"
+                                onClick={this.deleteProduct}>Delete
+                        </button>
+                        <button className="btn btn-success"
+                                onClick={this.hideDeleteModal}>Cancel
+                        </button>
+                    </ModalFooter>
                 </Modal>
             </div>
 

@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/measurement.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/measurement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/startup/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/startup/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/utils/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <workItem from="1638981712218" duration="251000" />
       <workItem from="1639017782003" duration="6410000" />
       <workItem from="1639065508384" duration="7096000" />
-      <workItem from="1639403199801" duration="4917000" />
+      <workItem from="1639403199801" duration="8829000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1639068885670</created>
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639068885670</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1639408175193</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1639408175193</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,23 +124,5 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/routes/product.js</url>
-          <line>39</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/routes/product.js</url>
-          <line>19</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

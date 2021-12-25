@@ -1,0 +1,39 @@
+body {
+    /*font-family: sans-serif;*/
+    position: relative;
+    background: #fff;
+    font-size: 14px;
+    overflow-x: hidden;
+    letter-spacing: 8px;
+}
+
+.box-1 {
+    text-align: right;
+}
+
+.container-1 {
+    display: block;
+}
+
+.top-header {
+    background-color: #f5f4f4;
+    /*display: flex;*/
+    width: 100%;
+
+}
+
+/*div {*/
+/*    display: block;*/
+/*}*/
+li {
+    list-style-type: none;
+}
+
+.top-header {
+    display: flex;
+    width: 100%;
+}
+
+.onhover-dropdown {
+
+}

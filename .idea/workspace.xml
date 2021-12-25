@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/src/pages/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/account.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/dislike.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/favorites.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/like.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/register.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/startup/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/startup/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,6 +49,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/src/pages/image" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -44,7 +58,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2021.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bahromjon\Desktop\NODE\online_shopping\web\src\pages\image" />
+      <recent name="C:\Users\Bahromjon\Desktop\NODE\online_shopping\web\src\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bahromjon\Desktop\NODE\online_shopping\web\src\pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$/server">
       <method v="2" />
     </configuration>
@@ -80,8 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.index.js" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.test" />
       </list>
@@ -98,7 +121,10 @@
       <workItem from="1638981712218" duration="251000" />
       <workItem from="1639017782003" duration="6410000" />
       <workItem from="1639065508384" duration="7096000" />
-      <workItem from="1639403199801" duration="8829000" />
+      <workItem from="1639403199801" duration="8940000" />
+      <workItem from="1639739331502" duration="3229000" />
+      <workItem from="1640063322126" duration="976000" />
+      <workItem from="1640404241087" duration="7791000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1639068885670</created>
@@ -114,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639408175193</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1639412456746</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639412456746</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,5 +157,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/routes/product.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

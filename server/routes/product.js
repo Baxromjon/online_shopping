@@ -36,7 +36,7 @@ router.post('/add', cors(), async (req, res) => {
     await product.save()
     res.status(201).send('Successfully added')
 })
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/:id', cors(), async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -60,7 +60,6 @@ router.put('/edit/:id', async (req, res) => {
     res.send('Successfully edited')
 })
 router.delete('/delete/:id', async (req, res) => {
-    // res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
     const product = await Product.findByIdAndRemove(req.params.id)
     if (!product)
         return res.status(400).send('Product not found by given id')

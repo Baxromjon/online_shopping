@@ -4,6 +4,7 @@ import request from "../utils/request";
 import api from "../utils/api";
 import {firebaseAuth} from "../utils/firebase";
 import {AvField, AvForm} from 'availity-reactstrap-validation'
+import firebase from "firebase";
 
 
 class Login extends Component {
@@ -19,20 +20,21 @@ class Login extends Component {
         if (localStorage.getItem(TOKEN)) {
             this.props.history.push('/cabinet')
         } else {
-            // this.props.history.push('/register')
-            // let cont = document.getElementById('reCaptcha');
-            // this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(cont, {
-            //     'size': 'invisible',
-            //     'callback': (res) => {
-            //     },
-            //     'expired-callback': () => {
-            //     },
-            //     'error-callback': () => {
-            //         alert("Xatolik!!! Iltimos birozdan keyin qayta urinib ko`ring!")
-            //     }
-            // });
-            // this.recaptchaVerifier.render();
-            //     this.setState({reCaptcha: this.recaptchaVerifier})
+            this.props.history.push('/register')
+            let cont = document.getElementById('reCaptcha');
+            this.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(cont, {
+                'size': 'invisible',
+                'callback': (res) => {
+                },
+                'expired-callback': () => {
+                },
+                'error-callback': () => {
+                    alert("Xatolik!!! Iltimos birozdan keyin qayta urinib ko`ring!")
+                }
+            });
+            this.recaptchaVerifier.render().then(r =>
+                this.setState({reCaptcha: this.recaptchaVerifier}));
+
         }
     }
 
@@ -43,11 +45,13 @@ class Login extends Component {
             data: v,
 
         }).then(res => {
-            if (res.status===200){
+            if (res.status === 200) {
                 localStorage.setItem(TOKEN, 'Bearer ' + res.data.data)
                 this.props.history.push('/cabinet')
-            }{
-                console.log("Loginga keldi")}
+            }
+            {
+                console.log("Loginga keldi")
+            }
         }).catch(err => {
             alert(err.data)
         })

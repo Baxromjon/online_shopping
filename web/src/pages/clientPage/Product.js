@@ -162,34 +162,26 @@ class Product extends Component {
                 </table>
 
                 {this.state.product?.map((item, index) =>
-                    <Row>
-                        <Col md={3} className="p-2 d-md-flex">
-                            <div className="card" style={{width: '14rem'}}>
-                                <img className="card-img-top" src="../image/phone.jpg" alt="Card image cap"/>
-                                <div className="card-body">
-                                    <h5 className="card-title">{item.name}</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make
-                                        up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <div className="card-group">
+                        <Row>
+                            <Col md={3} className="p-2 d-md-flex">
+                                <div className="card-deck">
+                                    <div className="card">
+                                        <img className="card-img-top" src="../image/phone.jpg" alt="Card image cap"/>
+                                            <div className="card-body">
+                                                <h5 className="card-title">{item.name}</h5>
+                                                <p className="card-text">This is a longer card with supporting text
+                                                    below as a natural lead-in to additional content. This content is a
+                                                    little bit longer.</p>
+                                                <p className="card-text"><small className="text-muted">Last updated 3
+                                                    mins ago</small></p>
+                                            </div>
+                                    </div>
                                 </div>
-                            </div>
-                            {/*<div className="container mt-3 justify-content-end align-items-center">*/}
-                            {/*    <h2>{item.name}</h2>*/}
-                            {/*    <p>{item.category.name}</p>*/}
-                            {/*    <p>{item.standardPrice}$</p>*/}
-                            {/*    <div className="card img-fluid" style={{width: '500px'}}>*/}
-                            {/*        <img className="card-img-top" src="../image/phone.jpg" alt="Card image"*/}
-                            {/*             style={{width: '100%'}}*/}
-                            {/*        />*/}
-                            {/*        <div className="card-img-overlay">*/}
-                            {/*            <h4 className="card-title">{item.name}</h4>*/}
-                            {/*            <p className="card-text">this may be description product</p>*/}
-                            {/*            <a href="#" className="btn btn-primary">Buy</a>*/}
-                            {/*        </div>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Row>
+                    </div>
+
                 )}
 
                 <Modal isOpen={this.state.showModal}>

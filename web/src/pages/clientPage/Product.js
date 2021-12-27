@@ -4,6 +4,7 @@ import request from "../../utils/request";
 import api from "../../utils/api"
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 import {AvField, AvForm} from 'availity-reactstrap-validation';
+import {Col, Container, Row} from "reactstrap";
 
 
 class Product extends Component {
@@ -112,7 +113,11 @@ class Product extends Component {
 
 
     render() {
+        {
+            console.log(this.state.product)
+        }
         return (
+
             <div>
                 <h1 className="text-center">Product list</h1>
                 <button className="btn btn-success btn-outline-light"
@@ -155,6 +160,37 @@ class Product extends Component {
                     ))}
                     </tbody>
                 </table>
+
+                {this.state.product?.map((item, index) =>
+                    <Row>
+                        <Col md={3} className="p-2 d-md-flex">
+                            <div className="card" style={{width: '14rem'}}>
+                                <img className="card-img-top" src="../image/phone.jpg" alt="Card image cap"/>
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.name}</h5>
+                                    <p className="card-text">Some quick example text to build on the card title and make
+                                        up the bulk of the card's content.</p>
+                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                            {/*<div className="container mt-3 justify-content-end align-items-center">*/}
+                            {/*    <h2>{item.name}</h2>*/}
+                            {/*    <p>{item.category.name}</p>*/}
+                            {/*    <p>{item.standardPrice}$</p>*/}
+                            {/*    <div className="card img-fluid" style={{width: '500px'}}>*/}
+                            {/*        <img className="card-img-top" src="../image/phone.jpg" alt="Card image"*/}
+                            {/*             style={{width: '100%'}}*/}
+                            {/*        />*/}
+                            {/*        <div className="card-img-overlay">*/}
+                            {/*            <h4 className="card-title">{item.name}</h4>*/}
+                            {/*            <p className="card-text">this may be description product</p>*/}
+                            {/*            <a href="#" className="btn btn-primary">Buy</a>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                        </Col>
+                    </Row>
+                )}
 
                 <Modal isOpen={this.state.showModal}>
                     <ModalHeader>

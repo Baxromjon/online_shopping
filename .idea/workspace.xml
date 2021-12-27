@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web/src/pages/clientPage/WishList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/src/pages/image/phone.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -57,7 +59,7 @@
       <recent name="C:\Users\Bahromjon\Desktop\NODE\online_shopping\web\src\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RunManager" selected="npm.start">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$/server">
       <method v="2" />
     </configuration>
@@ -115,7 +117,7 @@
       <workItem from="1639739331502" duration="3229000" />
       <workItem from="1640063322126" duration="976000" />
       <workItem from="1640404241087" duration="10405000" />
-      <workItem from="1640489848807" duration="483000" />
+      <workItem from="1640489848807" duration="12138000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1639068885670</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640432634536</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1640490634887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1640490634887</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,16 +164,5 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server/routes/product.js</url>
-          <line>39</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

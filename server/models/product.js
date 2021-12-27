@@ -18,7 +18,13 @@ const productSchema = mongoose.Schema({
         required: true
     },
     percent: Number,
-    standardPrice: Number
+    standardPrice: Number,
+    photo:String,
+    description:{
+        type:String,
+        min:10,
+        max:255
+    }
 })
 
 const Product = mongoose.model('Product', productSchema)
@@ -29,7 +35,9 @@ function validateProduct(product) {
         categoryId: Joi.string(),
         measurementId: Joi.string(),
         percent: Joi.number(),
-        standardPrice: Joi.number()
+        standardPrice: Joi.number(),
+        photo:Joi.string(),
+        description:Joi.string().min(10).max(255)
     }
     return Joi.validate(product, productSchema)
 }

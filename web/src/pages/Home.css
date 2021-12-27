@@ -4,7 +4,7 @@ body {
     background: #fff;
     font-size: 14px;
     overflow-x: hidden;
-    letter-spacing: 8px;
+    /*letter-spacing: 8px;*/
 }
 
 .box-1 {
@@ -35,6 +35,9 @@ li {
 /*}*/
 
 .onhover-dropdown {
+
+}
+header-dropdown:hover{
 
 }
 

@@ -4,6 +4,7 @@ const {validateProduct, Product} = require('../models/product')
 const {Measurement} = require('../models/measurement')
 const {Category} = require('../models/category')
 const cors = require('cors')
+const multer = require('multer')
 
 router.get('/allProducts', cors(), async (req, res) => {
     const products = await Product.find().sort('name')
@@ -15,8 +16,17 @@ router.get('/byId/:id', cors(), async (req, res) => {
     if (!product)
         return res.status(400).send('Product not found by given id')
 })
+const fileStorageEngine = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './images')
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + "--" + file.originalName)
+    }
+})
+const upload = multer({storage: fileStorageEngine})
 
-router.post('/add', cors(), async (req, res) => {
+router.post('/add', cors(), upload.array("images",10), async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)

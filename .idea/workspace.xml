@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/middleware/uploadFileMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +53,7 @@
       <recent name="C:\Users\Bahromjon\Desktop\NODE\online_shopping\web\src\pages" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Node.js.index.js">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/index.js" working-dir="$PROJECT_DIR$/server">
       <method v="2" />
     </configuration>
@@ -91,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.index.js" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.test" />
       </list>
@@ -115,7 +113,7 @@
       <workItem from="1640404241087" duration="10405000" />
       <workItem from="1640489848807" duration="12138000" />
       <workItem from="1640586916578" duration="34000" />
-      <workItem from="1640590028754" duration="816000" />
+      <workItem from="1640590028754" duration="3750000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1639068885670</created>
@@ -159,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640586942770</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <created>1640595058355</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1640595058355</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

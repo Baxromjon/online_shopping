@@ -134,6 +134,7 @@ class Product extends Component {
                         <th>Standard Price</th>
                         <th>Product Category</th>
                         <th>Measurement</th>
+                        <th>Photo</th>
                         <th colSpan={2}>Action</th>
                     </tr>
                     </thead>
@@ -146,6 +147,7 @@ class Product extends Component {
                             <td>{item.standardPrice}</td>
                             <td>{item.category.name}</td>
                             <td>{item.measurement.name}</td>
+                            <td>{item.photo}</td>
                             <td>
                                 <button className="btn btn-success"
                                         onClick={() => this.editProduct(item)}>EDIT
@@ -167,19 +169,18 @@ class Product extends Component {
                             <Col md={3} className="p-2 d-md-flex">
                                 <div className="card-deck">
                                     <div className="card">
-                                        <img className="card-img-top" src="../image/phone.jpg" alt="Card image cap"/>
-                                            <div className="card-body">
-                                                <h5 className="card-title">{item.name}</h5>
-                                                <p className="card-text">there should be a description</p>
-                                                <p className="card-text"><small className="text-muted">Last updated 3
-                                                    mins ago</small></p>
-                                            </div>
+                                        <img className="card-img-top" src={item.photo} alt="Card image cap"/>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{item.name}</h5>
+                                            <p className="card-text">there should be a description</p>
+                                            <p className="card-text"><small className="text-muted">Last updated 3
+                                                mins ago</small></p>
+                                        </div>
                                     </div>
                                 </div>
                             </Col>
                         </Row>
                     </div>
-
                 )}
 
                 <Modal isOpen={this.state.showModal}>

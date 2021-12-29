@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3dc913-db15-4a96-9a24-0db5e21d9c71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/middleware/upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/uploadFileMiddleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/startup/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/startup/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/clientPage/Product.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +121,8 @@
       <workItem from="1640404241087" duration="10405000" />
       <workItem from="1640489848807" duration="12138000" />
       <workItem from="1640586916578" duration="34000" />
-      <workItem from="1640590028754" duration="3750000" />
+      <workItem from="1640590028754" duration="15857000" />
+      <workItem from="1640792117161" duration="1680000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1639068885670</created>
@@ -164,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640595058355</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update">
+      <created>1640691319945</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1640691319945</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,5 +190,16 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server/routes/product.js</url>
+          <line>47</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

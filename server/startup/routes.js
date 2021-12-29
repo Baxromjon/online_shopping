@@ -12,10 +12,14 @@ const detail = require('../routes/detail')
 const values = require('../routes/value')
 const user = require('../routes/user')
 const auth = require('../routes/auth')
+const bodyParser=require('body-parser')
 
 
 module.exports = function (app) {
     app.use(express.json());
+    app.use('/uploads', express.static('uploads'));
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.json());
     app.use('/api/countries', country);
     app.use('/api/regions', region);
     app.use('/api/districts', district);

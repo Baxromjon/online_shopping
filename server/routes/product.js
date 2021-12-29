@@ -4,6 +4,33 @@ const {validateProduct, Product} = require('../models/product')
 const {Measurement} = require('../models/measurement')
 const {Category} = require('../models/category')
 const cors = require('cors')
+// const upload = require('../middleware/upload')
+const {Image, ImageSchema} = require('../models/image')
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, '../uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+})
+const fileFilter = (req, file, cb) => {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+        cb(null, true);
+    } else {
+        cb(null, false)
+    }
+};
+
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 1024 * 1024 * 5
+    },
+    fileFilter: fileFilter
+});
 
 router.get('/allProducts', cors(), async (req, res) => {
     const products = await Product.find().sort('name')
@@ -16,13 +43,14 @@ router.get('/byId/:id', cors(), async (req, res) => {
         return res.status(400).send('Product not found by given id')
 })
 
-router.post('/add', cors(), async (req, res) => {
+
+router.post('/add', cors(), upload.single('photo'), async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
     const category = await Category.findById(req.body.categoryId)
     if (!category)
-        return res.status(400).send('Category not found by given productId')
+        return res.status(400).send('Category not found by given categoryId')
     const measurement = await Measurement.findById(req.body.measurementId)
     if (!measurement)
         return res.status(400).send('Measurement not found by given measurementId')
@@ -32,9 +60,20 @@ router.post('/add', cors(), async (req, res) => {
         measurement: {_id: measurement._id, name: measurement.name},
         percent: req.body.percent,
         standardPrice: req.body.standardPrice,
-        description:req.body.description,
-        
+        description: req.body.description,
+        photo: req.file.path
     })
+    // if (req.file) {
+    //     product.photo = req.file.path
+    // }
+    // if (req.files) {
+    //     let path = ''
+    //     req.files.forEach(function (files, index, arr) {
+    //         path = path + files.path + ', '
+    //     })
+    //     path = path.substring(0, path.lastIndexOf(","))
+    //     product.photo = path
+    // }
     await product.save()
     res.status(201).send('Successfully added')
 })

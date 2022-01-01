@@ -4,7 +4,7 @@ const { criteriaSchema } = require('./criteria')
 const Joi = require('joi')
 
 const rateSchema = mongoose.Schema({
-    starcount: Number,
+    starCount: Number,
     product: { type: productSchema },
     criteria: { type: criteriaSchema }
 });

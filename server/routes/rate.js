@@ -8,6 +8,14 @@ const { Criteria } = require('../models/criteria')
 router.get('/', async (req, res) => {
     const rates = await Rate.find().sort('name')
     res.send(rates)
+});
+
+router.get('/getById/:id', async (req, res) => {
+    const rate = await Rate.findById(req.params.id)
+    if (!rate)
+        return res.status(400).send('Rate not found by given Id')
+
+    res.send(rate)
 })
 
 router.post('/add', async (req, res) => {
@@ -48,6 +56,14 @@ router.put('/edit/:id', async (req, res) => {
         res.status(400).send('Rate not found by given Id')
 
     res.send('Successfully edited')
+})
+
+router.delete('/delete/:id', async (req, res) => {
+    const rate = await Rate.findByIdAndRemove(req.params.id)
+    if (!rate)
+        return res.status(400).send('Rate not found by given id')
+
+    res.send('Successfully deleted')
 })
 
 module.exports = router;

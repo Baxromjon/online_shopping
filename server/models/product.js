@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Joi = require('joi')
-const {categorySchema} = require('../models/category')
-const {measurementSchema} = require('../models/measurement')
+const { categorySchema } = require('../models/category')
+const { measurementSchema } = require('../models/measurement')
+const { detailSchema } = require('../models/detail')
 
 const productSchema = mongoose.Schema({
     name: {
@@ -27,8 +28,12 @@ const productSchema = mongoose.Schema({
         type: String,
         min: 10,
         max: 255
-    }
-}, {timestamps: true})
+    },
+    cashback: { type: Number },
+    monthlyRepayment: { type: Number },
+    warrantyMonth: { type: Number },
+    detail: { type: detailSchema }
+}, { timestamps: true })
 
 const Product = mongoose.model('Product', productSchema)
 
@@ -40,7 +45,11 @@ function validateProduct(product) {
         percent: Joi.number(),
         standardPrice: Joi.number(),
         photo: Joi.string(),
-        description: Joi.string().min(10).max(255)
+        description: Joi.string().min(10).max(255),
+        cashback: Joi.number(),
+        monthlyRepayment: Joi.number(),
+        warrantyMonth: Joi.number(),
+        detailId: Joi.string()
     }
     return Joi.validate(product, productSchema)
 }

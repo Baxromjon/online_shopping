@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
     let value = new Value({
         name: req.body.name,
         detail: {
-            _id: detail._id
+            _id: detail._id, name: detail.name
         }
     })
     value = await value.save()

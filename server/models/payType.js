@@ -18,7 +18,7 @@ const PayType = mongoose.model('PayType', payTypeSchema);
 function validatePayType(paytype) {
     const payTypeSchema = {
         name: Joi.string().required(),
-        currencyTypeId: Joi.string().required()
+        currencyTypeId: Joi.string()
     }
     return Joi.validate(paytype, payTypeSchema)
 }

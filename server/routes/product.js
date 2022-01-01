@@ -10,7 +10,7 @@ const multer = require('multer')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, '../uploads');
+        cb(null, '../server/uploads');
     },
     filename: function (req, file, cb) {
         cb(null, Date.now() + '-' + file.originalname);
@@ -44,7 +44,7 @@ router.get('/byId/:id', cors(), async (req, res) => {
 })
 
 
-router.post('/add', cors(), upload.array('photos[]', 10)/**,upload.single('photo')**/, async (req, res) => {
+router.post('/add', cors(), upload.array('photos[]', 10), async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)

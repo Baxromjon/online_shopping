@@ -11,11 +11,11 @@ const productSchema = mongoose.Schema({
     },
     category: {
         type: categorySchema,
-        required: true
+        // required: true
     },
     measurement: {
         type: measurementSchema,
-        required: true
+        // required: true
     },
     percent: Number,
     standardPrice: Number,

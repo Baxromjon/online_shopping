@@ -13,6 +13,8 @@ const values = require('../routes/value')
 const user = require('../routes/user')
 const auth = require('../routes/auth')
 const bodyParser=require('body-parser')
+const criteria=require('../routes/criteria')
+const rates=require('../routes/rate')
 
 
 module.exports = function (app) {
@@ -33,6 +35,8 @@ module.exports = function (app) {
     app.use('/api/values', values);
     app.use('/api/users', user);
     app.use('/api/auth', auth);
+    app.use('/api/criterias', criteria)
+    app.use('/api/rates', rates)
 
     // app.use(function(req, res, next) {
     //     res.header('Access-Control-Allow-Origin', '*');

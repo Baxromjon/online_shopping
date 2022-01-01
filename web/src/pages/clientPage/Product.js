@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import request from "../../utils/request";
 import api from "../../utils/api"
 import {Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
@@ -84,7 +83,6 @@ class Product extends Component {
     }
 
     deleteProductModal = (product) => {
-        console.log(product)
         this.setState({
             deleteModal: true,
             currentProduct: product,
@@ -113,9 +111,7 @@ class Product extends Component {
 
 
     render() {
-        {
-            console.log(this.state.product)
-        }
+
         return (
 
             <div>
@@ -147,7 +143,9 @@ class Product extends Component {
                             <td>{item.standardPrice}</td>
                             <td>{item.category.name}</td>
                             <td>{item.measurement.name}</td>
-                            <td>{item.photo}</td>
+                            {/*<td>{item.photo.map(item => item).join(',  ')}console.log(item)</td>*/}
+                            <td>{item.description}</td>
+
                             <td>
                                 <button className="btn btn-success"
                                         onClick={() => this.editProduct(item)}>EDIT
@@ -172,9 +170,10 @@ class Product extends Component {
                                         <img className="card-img-top" src={item.photo} alt="Card image cap"/>
                                         <div className="card-body">
                                             <h5 className="card-title">{item.name}</h5>
-                                            <p className="card-text">there should be a description</p>
-                                            <p className="card-text"><small className="text-muted">Last updated 3
-                                                mins ago</small></p>
+                                            <p className="card-text">{item.description}</p>
+                                            <p className="card-text"><small
+                                                className="text-muted">{item.updatedAt - new Date().valueOf()}</small>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

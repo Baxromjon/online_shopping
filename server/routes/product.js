@@ -44,7 +44,7 @@ router.get('/byId/:id', cors(), async (req, res) => {
 })
 
 
-router.post('/add', cors(), upload.single('photo'), async (req, res) => {
+router.post('/add', cors(), upload.array('photos[]', 10)/**,upload.single('photo')**/, async (req, res) => {
     const {error} = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -61,19 +61,19 @@ router.post('/add', cors(), upload.single('photo'), async (req, res) => {
         percent: req.body.percent,
         standardPrice: req.body.standardPrice,
         description: req.body.description,
-        photo: req.file.path
+        photo: req.files.path
     })
     // if (req.file) {
     //     product.photo = req.file.path
     // }
-    // if (req.files) {
-    //     let path = ''
-    //     req.files.forEach(function (files, index, arr) {
-    //         path = path + files.path + ', '
-    //     })
-    //     path = path.substring(0, path.lastIndexOf(","))
-    //     product.photo = path
-    // }
+    if (req.files) {
+        let path = ''
+        req.files.forEach(function (files, index, arr) {
+            path = path + files.path + ', '
+        })
+        path = path.substring(0, path.lastIndexOf(","))
+        product.photo = path
+    }
     await product.save()
     res.status(201).send('Successfully added')
 })

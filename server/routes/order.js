@@ -10,6 +10,13 @@ router.get('/', async (req, res) => {
     res.send(order)
 });
 
+router.get('/getById/:id', async (req, res) => {
+    const order = await Order.findById(req.params.id)
+    if (!order)
+        return res.status(400).send('Order not found by given Id')
+
+    res.send(order)
+})
 router.post('/add', async (req, res) => {
     const { error } = validateOrder(req.body)
     if (error)
@@ -36,6 +43,8 @@ router.put('/editOrderStatus/:id', async (req, res) => {
     }, { new: true })
     if (!order)
         return res.status(400).send('Order not found by given Id')
+
+    res.send('Status successfully edited!')
 
 })
 

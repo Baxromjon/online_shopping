@@ -19,6 +19,7 @@ const payment = require('../routes/payment')
 const pv = require('../routes/productValue')
 const outputTrade = require('../routes/outputTrade')
 const outputProduct=require('../routes/outputProduct')
+const order=require('../routes/order')
 
 
 module.exports = function (app) {
@@ -44,7 +45,8 @@ module.exports = function (app) {
     app.use('/api/payments', payment);
     app.use('/api/productValues', pv);
     app.use('/api/outputTrades', outputTrade);
-    app.use('/api/outputProducts', outputProduct)
+    app.use('/api/outputProducts', outputProduct);
+    app.use('/api/orders', order);
 
     // app.use(function(req, res, next) {
     //     res.header('Access-Control-Allow-Origin', '*');

@@ -41,7 +41,11 @@ const userSchema = mongoose.Schema({
         enum: Object.values(Role)
     },
     discount: Number,
-    isAdmin: Boolean
+    isAdmin: Boolean,
+    isEnable: {
+        type: Boolean,
+        default: true
+    }
 })
 
 userSchema.methods.generateAuthToken = function () {

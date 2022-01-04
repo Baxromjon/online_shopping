@@ -83,11 +83,12 @@ router.put('/:id', async (req, res) => {
     res.send('Successfully edited')
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     const users = await User.findByIdAndRemove(req.params.id)
     if (!users)
         return res.status(400).send('User not found by given id')
 
+    users.isEnable==false
     res.send('Successfully deleted')
 })
 

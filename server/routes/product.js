@@ -1,12 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const {validateProduct, Product} = require('../models/product')
-const {Measurement} = require('../models/measurement')
-const {Category} = require('../models/category')
+const { validateProduct, Product } = require('../models/product')
+const { Measurement } = require('../models/measurement')
+const { Category } = require('../models/category')
 const cors = require('cors')
-// const upload = require('../middleware/upload')
-const {Image, ImageSchema} = require('../models/image')
 const multer = require('multer')
+const { Detail } = require('../models/detail')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -45,7 +44,7 @@ router.get('/byId/:id', cors(), async (req, res) => {
 
 
 router.post('/add', cors(), upload.array('photos[]', 10), async (req, res) => {
-    const {error} = validateProduct(req.body)
+    const { error } = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
     const category = await Category.findById(req.body.categoryId)
@@ -56,12 +55,16 @@ router.post('/add', cors(), upload.array('photos[]', 10), async (req, res) => {
         return res.status(400).send('Measurement not found by given measurementId')
     let product = new Product({
         name: req.body.name,
-        category: {_id: category._id, name: category.name},
-        measurement: {_id: measurement._id, name: measurement.name},
+        category: { _id: category._id, name: category.name },
+        measurement: { _id: measurement._id, name: measurement.name },
         percent: req.body.percent,
         standardPrice: req.body.standardPrice,
         description: req.body.description,
-        photo: req.files.path
+        photo: req.files.path,
+        cashback: req.body.cashback,
+        monthlyRepayment: req.body.monthlyRepayment,
+        warrantyMonth: req.body.warrantyMonth,
+        price: req.body.standardPrice - (req.body.standardPrice * req.body.cashback)
     })
     // if (req.file) {
     //     product.photo = req.file.path
@@ -78,7 +81,7 @@ router.post('/add', cors(), upload.array('photos[]', 10), async (req, res) => {
     res.status(201).send('Successfully added')
 })
 router.put('/edit/:id', cors(), async (req, res) => {
-    const {error} = validateProduct(req.body)
+    const { error } = validateProduct(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
 
@@ -92,9 +95,9 @@ router.put('/edit/:id', cors(), async (req, res) => {
         name: req.body.name,
         standardPrice: req.body.standardPrice,
         percent: req.body.percent,
-        category: {_id: category._id, name: category.name},
-        measurement: {_id: measurement._id, name: measurement.name}
-    }, {new: true})
+        category: { _id: category._id, name: category.name },
+        measurement: { _id: measurement._id, name: measurement.name }
+    }, { new: true })
     if (!product)
         return res.status(400).send('Product not found by given id')
 

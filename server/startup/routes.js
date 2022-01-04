@@ -16,6 +16,9 @@ const bodyParser = require('body-parser')
 const criteria = require('../routes/criteria')
 const rates = require('../routes/rate')
 const payment = require('../routes/payment')
+const pv = require('../routes/productValue')
+const outputTrade = require('../routes/outputTrade')
+const outputProduct=require('../routes/outputProduct')
 
 
 module.exports = function (app) {
@@ -38,7 +41,10 @@ module.exports = function (app) {
     app.use('/api/auth', auth);
     app.use('/api/criterias', criteria);
     app.use('/api/rates', rates);
-    app.use('/api/payments', payment)
+    app.use('/api/payments', payment);
+    app.use('/api/productValues', pv);
+    app.use('/api/outputTrades', outputTrade);
+    app.use('/api/outputProducts', outputProduct)
 
     // app.use(function(req, res, next) {
     //     res.header('Access-Control-Allow-Origin', '*');

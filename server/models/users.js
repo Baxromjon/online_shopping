@@ -6,14 +6,14 @@ const { districtSchema } = require('../models/district')
 
 const Role = Object.freeze({
     ADMIN: 'admin',
-    MODERATOR: 'mderator',
+    MODERATOR: 'moderator',
     SELLER: 'seller',
     MANAGER: 'manager',
     CLIENT: 'client',
     DRIVER: 'driver'
 });
 
-const userSchema = mongoose.Schema({
+const userSchema =new mongoose.Schema({
     firstName: {
         type: String,
         min: 3,
@@ -66,7 +66,8 @@ function validateUser(user) {
         home: Joi.string(),
         role: Joi.string(),
         discount: Joi.number(),
-        isAdmin: Joi.boolean()
+        isAdmin: Joi.boolean(),
+        isEnable:Joi.boolean(),
     }
     return Joi.validate(user, userSchema)
 }

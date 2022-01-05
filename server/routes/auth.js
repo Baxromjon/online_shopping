@@ -5,7 +5,7 @@ const _ = require('lodash')
 const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
-router.post('/auth/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     console.log('loginga kirdi')
     const { error } = validate(req.body)
     if (error)
@@ -13,11 +13,11 @@ router.post('/auth/login', async (req, res) => {
 
     let user = await User.findOne({ phoneNumber: req.body.phoneNumber })
     if (!user)
-        return res.status(400).send('Phone number or password error')
+        return res.status(400).send('Phone number or password error {phonenumber}')
 
     const isValidPassword = await bcrypt.compare(req.body.password, user.password)
     if (!isValidPassword)
-        return res.status(400).send('Phone number or password error')
+        return res.status(400).send('Phone number or password error {password}')
 
     const token = user.generateAuthToken();
     res.header('x-auth-token', token).send('Successfully');

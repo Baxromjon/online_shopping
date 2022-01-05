@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
     res.send(user)
 })
 
-router.post('/auth/register', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { error } = validateUser(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
@@ -47,9 +47,10 @@ router.post('/auth/register', async (req, res) => {
         district: { _id: district._id },
         street: req.body.street,
         home: req.body.home,
-        role: Role.CLIENT
+        role: Role.CLIENT,
+        isAdmin: req.body.isAdmin
     })
-    user = await user.save()
+    await user.save()
     res.send('Successfully added')
 })
 
@@ -66,7 +67,7 @@ router.put('/:id', async (req, res) => {
     user = await User.findById(req.params.id)
     if (!user)
         return res.status(400).send('User not found by given id')
-    const salt = await bcrypt.genSalt();
+
     user = await User.findOneAndUpdate(req.params.id, {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -84,12 +85,33 @@ router.put('/:id', async (req, res) => {
 })
 
 router.delete('/delete/:id', async (req, res) => {
-    const users = await User.findByIdAndRemove(req.params.id)
+    const users = await User.findByIdAndUpdate(req.params.id, {
+        isEnable: false
+    }, { new: true })
     if (!users)
         return res.status(400).send('User not found by given id')
 
-    users.isEnable==false
     res.send('Successfully deleted')
+})
+
+router.post('/restore', async (req, res) => {
+    const user = await User.findOneAndUpdate({ phoneNumber: req.body.phoneNumber }, { isEnable: true })
+    if (!user)
+        return res.send('This phonenumber don`t registered')
+
+    if (user.isEnable == true)
+        return res.send('already restored')
+
+    res.send('Successfully restored')
+});
+
+router.post('/restorePassword', async (req, res) => {
+    const salt = await bcrypt.genSalt();
+    const user = await User.findOneAndUpdate({ phoneNumber: req.body.phoneNumber }, { password: await bcrypt.hash(req.body.password, salt) })
+    if (!user)
+        return res.status(400).send('User not found by this phoneNumber')
+
+    res.send('Password successfully restored')
 })
 
 module.exports = router;

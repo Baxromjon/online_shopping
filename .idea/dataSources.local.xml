@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-212.5457.46">
+    <data-source name="MongoDB - online_shopping@localhost" uuid="113e5961-b5e7-4288-a4c3-ae751f3e1846">
+      <database-info product="Mongo DB" version="" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.13" dbms="UNKNOWN" exact-version="0" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>mongoDB</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>

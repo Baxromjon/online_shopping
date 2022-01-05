@@ -6,18 +6,17 @@ const bcrypt = require('bcrypt')
 const Joi = require('joi')
 
 router.post('/login', async (req, res) => {
-    console.log('loginga kirdi')
     const { error } = validate(req.body)
     if (error)
         return res.status(400).send(error.details[0].message)
 
     let user = await User.findOne({ phoneNumber: req.body.phoneNumber })
     if (!user)
-        return res.status(400).send('Phone number or password error {phonenumber}')
+        return res.status(400).send('Phone number or password error')
 
     const isValidPassword = await bcrypt.compare(req.body.password, user.password)
     if (!isValidPassword)
-        return res.status(400).send('Phone number or password error {password}')
+        return res.status(400).send('Phone number or password error')
 
     const token = user.generateAuthToken();
     res.header('x-auth-token', token).send('Successfully');
